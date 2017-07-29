@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Party Request</title>
+</head>
+<body>
+<form name="party-request" action="success.html" method="post">
+  <fieldset>
+    <div>
+      <label>Full Name:</label>
+      <input type="text" name="fullname">
+    </div>
+    <div>
+      <label>Email Address:</label>
+      <input type="email" name="email">
+    </div>
+    <div>
+      <label>Birthday:</label>
+      <input type="date" name="birthday">
+    </div>
+    <div>
+      <label>Party Theme:</label>
+      <select name="theme">
+        <option value="sea">Under the Sea</option>
+        <option value="dinosaurs">Dinosaurs</option>
+        <option value="nineties">The 90's</option>
+      </select>
+    </div>
+    <div>
+      <label>Any special requests?</label>
+      <textarea name="requests" row="10" col="30">Enter special requests here.</textarea>
+    </div>
+  </fieldset>
+  <button type="submit">Submit Your Request</button>
+</form>
+</body>
+</html>
