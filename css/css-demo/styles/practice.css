@@ -12,3 +12,11 @@
 .accomplishments {
   font-size: .8em
 }
+
+.job:hover {
+  background-color: rgb(232,126,122);
+}
+
+section.job {
+  font-style:italic;
+}
