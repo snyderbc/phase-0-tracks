@@ -12,6 +12,7 @@ cite {
 #external-links ul {
   list-style-type: none;
   padding-left: 0px;
+  float: left;
 }
 
 /* you're welcome to edit the
@@ -58,4 +59,9 @@ main {
   h1 {
     font-size: 100%;
   }
+}
+
+#wrap {
+  width: 750px;
+  margin: 0 auto;
 }
