@@ -48,3 +48,14 @@ main {
   display: inline-block;
   vertical-align: top;
 }
+
+@media screen and (max-width: 500px) {
+  body {
+    background-color: hotpink;
+    display: block;
+    width: 100%;
+  }
+  h1 {
+    font-size: 100%;
+  }
+}
