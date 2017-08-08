@@ -1,3 +1,8 @@
+body {
+  font-family: Georgia, serif;
+  background-color: white;
+}
+
 header {
   background-color: blue;
   padding: 20px;
@@ -8,12 +13,17 @@ header {
   display: inline-block;
   width: 45%;
   margin: 10px;
+  vertical-align: top;
+  height: 1100px;
 }
 
 .column-2 {
   background-color: red;
   display: inline-block;
   width: 45%;
+  margin: 10px;
+  vertical-align: top;
+  height: 1100px;
 }
 
 footer {
@@ -21,4 +31,11 @@ footer {
   border-style: solid;
   border-size: 3px;
   margin-top: 20px;
+}
+
+@media screen and (max-width: 850px) {
+.column-1, .column-2 {
+  display: block;
+  width: 100%;
+}
 }
