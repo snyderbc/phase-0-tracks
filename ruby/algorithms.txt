@@ -5,8 +5,10 @@ Release 0: Equip Your New Robot (Elevator)
    - Otherwise, press the down arrow.
 - Stand patiently until the elevator arrives, indicated by a ding and a door opening
 - Enter the open elevator door, and scan the elevator walls until you locate a panel with numbered buttons
-- Scan each number on the panel until you find the number equal to your destination floor
-  - Push the number equal to your destination floor, until it is hightlighted
+- Look at the first number in the left corner of the list
+  - If the number is equal to your destination number, push the numbered button until it is highlighted
+  - If it does not equal your destination number, continue to the next number on the list until you find the number equal to your destination number.
+    - There may be multiple lists - once one column is finished, move to the top of the next column.
 - When the elevator stops moving and the door opens:
   - Check to see if the floor is equal to your floor destination (floors are typically labeled)
     - If it is not equal: stay on the elevator and wait patiently
