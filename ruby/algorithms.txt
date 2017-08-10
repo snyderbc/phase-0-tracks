@@ -1,0 +1,13 @@
+Release 0: Equip Your New Robot (Elevator)
+
+- Move forward until you are within one foot of the elevator call panel, which contains an arrow pointing up and an error pointing down
+   - If your destination floor number is greater than your current floor, press the up arrow.
+   - Otherwise, press the down arrow.
+- Stand patiently until the elevator arrives, indicated by a ding and a door opening
+- Enter the open elevator door, and scan the elevator walls until you locate a panel with numbered buttons
+- Scan each number on the panel until you find the number equal to your destination floor
+  - Push the number equal to your destination floor, until it is hightlighted
+- When the elevator stops moving and the door opens:
+  - Check to see if the floor is equal to your floor destination (floors are typically labeled)
+    - If it is not equal: stay on the elevator and wait patiently
+    - If it is equal: exit the elevator through the open door and do a well-earned victory dance
