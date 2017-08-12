@@ -34,9 +34,9 @@ until employees == 0
     vampire = "Definitely a vampire."
   end
 
-  if vampire != "Probably not a vampire." && vampire != "Probably a vampire." && vampire != "Almost   certainly a vampire." && vampire != "Definitely a   vampire."
-    vampire = "Results inconclusive."
-  end
+if vampire != "Probably not a vampire." && vampire != "Probably a vampire." && vampire != "Almost certainly a vampire." && vampire != "Definitely a vampire."
+  vampire = "Results inconclusive."
+end
 
   p vampire
 
