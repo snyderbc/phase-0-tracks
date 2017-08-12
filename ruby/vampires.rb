@@ -18,6 +18,15 @@ until employees == 0
   puts "Would you like to enroll in the company’s   health insurance? (y/n)"
   insurance = gets.chomp
 
+
+  puts "Please list any allergies, one at a time. Type 'done' when finished."
+  allergies = gets.chomp
+  until allergies == "done" || allergies == "sunshine"
+    if allergies == "sunshine"
+      vampire = "Probably a vampire."
+      end
+  end
+
   if age.to_i == (2017 - birth_year.to_i || 2016 -  birth_year.to_i) && (garlic == "y" || insurance ==  "y")
     vampire = "Probably not a vampire."
   end
