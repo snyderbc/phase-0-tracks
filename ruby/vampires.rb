@@ -7,47 +7,51 @@ until employees == 0
   name = gets.chomp
 
   puts "How old are you?"
-  age = gets.chomp
+  reported_age = gets.chomp.to_i
 
   puts "What year were you born?"
-  birth_year = gets.chomp
+  birth_year = gets.chomp.to_i
 
   puts "Our company cafeteria serves garlic bread.  Should we order some for you? (y/n)"
   garlic = gets.chomp
 
-  puts "Would you like to enroll in the company’s   health insurance? (y/n)"
-  insurance = gets.chomp
+  puts "Would you like to enroll in the company’s health insurance?"
+  health_insurance = gets.chomp
 
-
-  puts "Please list any allergies, one at a time. Type 'done' when finished."
-  allergies = gets.chomp
-  until allergies == "done" || allergies == "sunshine"
-    if allergies == "sunshine"
-      vampire = "Probably a vampire."
+allergies = ""
+  while allergies != "done"
+    puts "Please list any allergies, one at a time. When finished, type 'done'."
+    allergies = gets.chomp
+      if allergies == "sunshine"
+        break
       end
   end
 
-  if age.to_i == (2017 - birth_year.to_i || 2016 -  birth_year.to_i) && (garlic == "y" || insurance ==  "y")
-    vampire = "Probably not a vampire."
-  end
+ vampire = "Results inconclusive."
 
-  if age.to_i != (2017 - birth_year.to_i || 2016 -  birth_year.to_i) && (garlic == "n" || insurance ==  "n")
-    vampire = "Probably a vampire."
-  end
+    if reported_age == (2017 - birth_year || 2016 -   birth_year) && (garlic == "y" ||  health_insurance == "y")
+      vampire = "Probably not a vampire."
+    end
 
-  if age.to_i != (2017 - birth_year.to_i || 2016 -  birth_year.to_i) && garlic == "n" && insurance ==  "n"
-    vampire = "Almost certainly a vampire."
-  end
+    if reported_age != (2017 - birth_year || 2016 -   birth_year) && (garlic == "n" ||  health_insurance == "n")
+      vampire = "Probably a vampire."
+    end
 
-  if name == "Drake Cula" || name == "Tu Fang"
-    vampire = "Definitely a vampire."
-  end
+    if reported_age != (2017 - birth_year || 2016 -   birth_year) && garlic == "n" && health_insurance   == "n"
+      vampire = "Almost certainly a vampire."
+    end
 
-if vampire != "Probably not a vampire." && vampire != "Probably a vampire." && vampire != "Almost certainly a vampire." && vampire != "Definitely a vampire."
-  vampire = "Results inconclusive."
+    if name == "Drake Cula" || name == "Tu Fang"
+      vampire = "Definitely a vampire."
+    end
+
+    if allergies == "sunshine"
+      vampire = "Probably a vampire."
+    end
+
+  p "Vampire Results: #{vampire}"
+
+employees = employees -1
 end
 
-  p vampire
-
-  employees = employees - 1
-end
+puts "Actually, never mind! What do these questions have to do with anything? Let's all be friends."
