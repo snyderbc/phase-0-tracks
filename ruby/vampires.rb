@@ -19,9 +19,12 @@ vampire = "Results inconclusive."
     vampire = "Probably not a vampire."
   end
 
- if reported_age != (2017 - birth_year || 2016 - birth_year) && garlic == "n" && health_insurance == "n"
-    vampire = "Almost certainly a vampire."
+ if reported_age != (2017 - birth_year || 2016 - birth_year) && (garlic == "n" || health_insurance == "n")
+    vampire = "Probably a vampire."
   end
 
+if reported_age != (2017 - birth_year || 2016 - birth_year) && garlic == "n" && health_insurance == "n"
+    vampire = "Almost certainly a vampire."
+  end
 
 p vampire
