@@ -1,34 +1,42 @@
-puts "What is your name?"
-name = gets.chomp
+puts "How many employees will be processed?"
+employees = gets.chomp.to_i
 
-puts "How old are you?"
-reported_age = gets.chomp.to_i
+until employees == 0
 
-puts "What year were you born?"
-birth_year = gets.chomp.to_i
+  puts "What is your name?"
+  name = gets.chomp
 
-puts "Our company cafeteria serves garlic bread. Should we order some for you? (y/n)"
-garlic = gets.chomp
+  puts "How old are you?"
+  reported_age = gets.chomp.to_i
 
-puts "Would you like to enroll in the company’s health insurance?"
-health_insurance = gets.chomp
+  puts "What year were you born?"
+  birth_year = gets.chomp.to_i
 
-vampire = "Results inconclusive."
+  puts "Our company cafeteria serves garlic bread.  Should we order some for you? (y/n)"
+  garlic = gets.chomp
 
-  if reported_age == (2017 - birth_year || 2016 - birth_year) && (garlic == "y" || health_insurance == "y")
-    vampire = "Probably not a vampire."
-  end
+  puts "Would you like to enroll in the company’s   health insurance?"
+  health_insurance = gets.chomp
 
-  if reported_age != (2017 - birth_year || 2016 - birth_year) && (garlic == "n" || health_insurance == "n")
-    vampire = "Probably a vampire."
-  end
+  vampire = "Results inconclusive."
 
-  if reported_age != (2017 - birth_year || 2016 - birth_year) && garlic == "n" && health_insurance == "n"
-    vampire = "Almost certainly a vampire."
-  end
+    if reported_age == (2017 - birth_year || 2016 -   birth_year) && (garlic == "y" ||  health_insurance == "y")
+      vampire = "Probably not a vampire."
+    end
 
-  if name == "Drake Cula" || name == "Tu Fang"
-    vampire = "Definitely a vampire."
-  end
+    if reported_age != (2017 - birth_year || 2016 -   birth_year) && (garlic == "n" ||  health_insurance == "n")
+      vampire = "Probably a vampire."
+    end
 
-p "Vampire Results: #{vampire}"
+    if reported_age != (2017 - birth_year || 2016 -   birth_year) && garlic == "n" && health_insurance   == "n"
+      vampire = "Almost certainly a vampire."
+    end
+
+    if name == "Drake Cula" || name == "Tu Fang"
+      vampire = "Definitely a vampire."
+    end
+
+  p "Vampire Results: #{vampire}"
+
+employees = employees -1
+end
