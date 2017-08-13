@@ -15,10 +15,19 @@ until employees == 0
   puts "Our company cafeteria serves garlic bread.  Should we order some for you? (y/n)"
   garlic = gets.chomp
 
-  puts "Would you like to enroll in the company’s   health insurance?"
+  puts "Would you like to enroll in the company’s health insurance?"
   health_insurance = gets.chomp
 
-  vampire = "Results inconclusive."
+allergies = ""
+  while allergies != "done"
+    puts "Please list any allergies, one at a time. When finished, type 'done'."
+    allergies = gets.chomp
+      if allergies == "sunshine"
+        break
+      end
+  end
+
+ vampire = "Results inconclusive."
 
     if reported_age == (2017 - birth_year || 2016 -   birth_year) && (garlic == "y" ||  health_insurance == "y")
       vampire = "Probably not a vampire."
@@ -34,6 +43,10 @@ until employees == 0
 
     if name == "Drake Cula" || name == "Tu Fang"
       vampire = "Definitely a vampire."
+    end
+
+    if allergies == "sunshine"
+      vampire = "Probably a vampire."
     end
 
   p "Vampire Results: #{vampire}"
