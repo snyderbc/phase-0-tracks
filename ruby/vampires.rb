@@ -19,12 +19,16 @@ vampire = "Results inconclusive."
     vampire = "Probably not a vampire."
   end
 
- if reported_age != (2017 - birth_year || 2016 - birth_year) && (garlic == "n" || health_insurance == "n")
+  if reported_age != (2017 - birth_year || 2016 - birth_year) && (garlic == "n" || health_insurance == "n")
     vampire = "Probably a vampire."
   end
 
-if reported_age != (2017 - birth_year || 2016 - birth_year) && garlic == "n" && health_insurance == "n"
+  if reported_age != (2017 - birth_year || 2016 - birth_year) && garlic == "n" && health_insurance == "n"
     vampire = "Almost certainly a vampire."
   end
 
-p vampire
+  if name == "Drake Cula" || name == "Tu Fang"
+    vampire = "Definitely a vampire."
+  end
+
+p "Vampire Results: #{vampire}"
