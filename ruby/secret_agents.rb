@@ -37,7 +37,10 @@ def decrypt(str_2)
   index = 0
   while index < str_2.length
    position = "abcdefghijklmnopqrstuvwxyz".index(str_2[index])
-   str_2[index] = "abcdefghijklmnopqrstuvwxyz"[(position.to_i - 1)]
+    if str_2[index] == " "
+      str_2[index] = " "
+    else str_2[index] = "abcdefghijklmnopqrstuvwxyz"[(position.to_i - 1)]
+    end
   index += 1
   end
   puts str_2
