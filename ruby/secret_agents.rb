@@ -17,7 +17,7 @@ def encrypt(str)
   end
     index += 1
   end
-  puts str
+  p str
 end
 
 encrypt("abc")
@@ -43,8 +43,12 @@ def decrypt(str_2)
     end
   index += 1
   end
-  puts str_2
+  p str_2
 end
 
 decrypt("bcd")
 decrypt("afe")
+
+decrypt(encrypt("swordfish"))
+
+#Used p instead of puts so that the return value is not "nil", this allows the nested method call above to work correctly.
