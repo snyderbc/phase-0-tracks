@@ -33,17 +33,17 @@ encrypt("zed")
 #Display the decrypted code
 
 
-def decrypt(str_2)
+def decrypt(str)
   index = 0
-  while index < str_2.length
-   position = "abcdefghijklmnopqrstuvwxyz".index(str_2[index])
-    if str_2[index] == " "
-      str_2[index] = " "
-    else str_2[index] = "abcdefghijklmnopqrstuvwxyz"[(position.to_i - 1)]
+  while index < str.length
+   position = "abcdefghijklmnopqrstuvwxyz".index(str[index])
+    if str[index] == " "
+      str[index] = " "
+    else str[index] = "abcdefghijklmnopqrstuvwxyz"[(position.to_i - 1)]
     end
   index += 1
   end
-  p str_2
+  p str
 end
 
 decrypt("bcd")
@@ -52,3 +52,29 @@ decrypt("afe")
 decrypt(encrypt("swordfish"))
 
 #Used p instead of puts so that the return value is not "nil", this allows the nested method call above to work correctly.
+
+#Driver Code
+#Ask the secret agent whether or not they would like to decrypt or an encrypt a password
+#Continue to ask until they provide a valid input of "encrpyt" or "decrypt"
+#Once valid input is received, ask for the password
+#If they chose "encrpyt", input the password into the encrpty method
+#If they chose "decrypt", input the password into the decrypt method
+#Print the result to the screen, and exit
+
+valid_input = false
+until valid_input == true
+  puts "Would you like to encrypt or decrypt a password?"
+    action = gets.chomp
+  if action == "encrypt"
+    puts "What is the password?"
+    str = gets.chomp
+    puts "The encrypted version is #{encrypt(str)}"
+    valid_input = true
+  elsif action == "decrypt"
+    puts "What is the password?"
+    str = gets.chomp
+     puts "The decrypted version is #{decrypt (str)}"
+    valid_input = true
+  else puts "I didn't understand you."
+  end
+end
