@@ -9,16 +9,19 @@
 def encrypt(str)
   index = 0
   while index < str.length
-    str[index] = str[index].next
-      if str[index].next == "!"
-        str[index] = " "
-      end
+    if str[index] == "z"
+      str[index] = "a"
+    elsif str[index] == " "
+      str[index] = " "
+    else str[index] = str[index].next
+  end
     index += 1
   end
   puts str
 end
 
 encrypt("abc")
+encrypt("zed")
 
 
 #Decrypt Method
@@ -41,3 +44,4 @@ def decrypt(str_2)
 end
 
 decrypt("bcd")
+decrypt("afe")
