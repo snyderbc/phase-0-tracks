@@ -13,28 +13,31 @@
 "zom".insert(2, 'o')
 # => “zoom”
 
-# "enhance".<???>
+"enhance".center(15)
 # => "    enhance    "
 
-# "Stop! You’re under arrest!".<???>
+"Stop! You’re under arrest!".upcase
 # => "STOP! YOU’RE UNDER ARREST!"
 
 "the usual" + " suspects"
+"the usual" << " suspects"
 # => "the usual suspects"
 
-# " suspects".<???>
+
 " suspects".replace "the usual suspects"
+" suspects".prepend("the usual")
 # => "the usual suspects"
 
 "The case of the disappearing last letter".chomp
 "The case of the disappearing last letter".chop
 # => "The case of the disappearing last lette"
 
-# "The mystery of the missing first letter".<???>
+"The mystery of the missing first letter"[1..39]
 # => "he mystery of the missing first letter"
 
 # "Elementary,    my   dear        Watson!".<???>
 # => "Elementary, my dear Watson!"
+#strip?
 
 "z".ord
 # => 122
