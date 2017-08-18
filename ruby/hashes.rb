@@ -4,25 +4,30 @@
 
 puts "What is your name?"
 name = gets.chomp
+puts name
 
 puts "What is your age?"
 age = gets.chomp.to_i
+puts age
 
 puts "How many children do you have?"
 children = gets.chomp.to_i
+puts children
 
 puts "What decor theme do you prefer?"
 decor_theme = gets.chomp
+puts decor_theme
 
 puts "Do you like the color red? (y/n)"
 red = gets.chomp
 
-if red = "y"
+if red == "y"
   red = true
 else
   red = false
 end
 
+puts red
 
 
 #Create a hash to store all of their input
