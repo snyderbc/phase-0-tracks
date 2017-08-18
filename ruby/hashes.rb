@@ -35,19 +35,17 @@ p client_details
 
 puts "Are there any fields you would like to change?"
 changes = gets.chomp.to_sym
+
 #If user inputs "none", skip it
-
-if changes == "none"
+if changes == :none
   puts "Okay great, thanks!"
-elsif changes == "name"
-  puts "What would you like to update this to?"
-  client_details[:name] = gets.chomp
+
+#Otherwise, get the user's new input, and update the key with that new input
 else
-  puts "I didn't understand you."
+  puts "What would you like to update this to?"
+  new_input = gets.chomp
+  client_details[changes] = new_input
 end
-
-
-#If the users input string as a symbol matches any of the keys in the hash, ask the user for a new value for the matching key and store that new value in the matching key.
 
 
 #Print the last version of the hash, and exit the program
