@@ -21,6 +21,11 @@ client_details[:decor] = gets.chomp
 puts "Do you like the color red? (y/n)"
 client_details[:red] = gets.chomp
 
+if client_details[:red] == "y"
+  client_details[:red] = true
+else
+  client_details[:red] = false
+end
 
 #Print the hash once all questions are complete
 
