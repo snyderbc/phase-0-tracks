@@ -34,7 +34,7 @@ p client_details
 #Ask the user if they have any changes
 
 puts "Are there any fields you would like to change?"
-changes = gets.chomp
+changes = gets.chomp.to_sym
 #If user inputs "none", skip it
 
 if changes == "none"
@@ -46,9 +46,9 @@ else
   puts "I didn't understand you."
 end
 
-#recognize and match the key name
 
-#If user inputs a key name, ask for a new value and update the corresponding key
+#If the users input string as a symbol matches any of the keys in the hash, ask the user for a new value for the matching key and store that new value in the matching key.
+
 
 #Print the last version of the hash, and exit the program
 
