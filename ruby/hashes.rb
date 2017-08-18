@@ -7,23 +7,26 @@ client_details = {}
 # Convert any user input to the appropriate data type
 
 puts "What is your name?"
-client_details["name"] = gets.chomp
+client_details[:name] = gets.chomp
 
 puts "What is your age?"
-client_details["age"] = gets.chomp.to_i
-
+client_details[:age] = gets.chomp.to_i
 
 puts "How many children do you have?"
-client_details["children"] = gets.chomp.to_i
+client_details[:children] = gets.chomp.to_i
 
 puts "What decor theme do you prefer?"
-client_details["decor"] = gets.chomp
+client_details[:decor] = gets.chomp
 
 puts "Do you like the color red? (y/n)"
-client_details["red"] = gets.chomp
+client_details[:red] = gets.chomp
 
 
 #Print the hash once all questions are complete
 
 p client_details
 
+#Ask the user if they have any changes
+#If user inputs "none", but it
+#If user inputs a key name, ask for a new value and update the corresponding key
+#Print the last version of the hash, and exit the program
