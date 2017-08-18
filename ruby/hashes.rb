@@ -32,6 +32,24 @@ end
 p client_details
 
 #Ask the user if they have any changes
-#If user inputs "none", but it
+
+puts "Are there any fields you would like to change?"
+changes = gets.chomp
+#If user inputs "none", skip it
+
+if changes == "none"
+  puts "Okay great, thanks!"
+elsif changes == "name"
+  puts "What would you like to update this to?"
+  client_details[:name] = gets.chomp
+else
+  puts "I didn't understand you."
+end
+
+#recognize and match the key name
+
 #If user inputs a key name, ask for a new value and update the corresponding key
+
 #Print the last version of the hash, and exit the program
+
+p client_details
