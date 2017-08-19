@@ -1,11 +1,11 @@
-def say_goodbye
+def adder
   number1 = 5
   number2 = 2
   puts "Forget how to add?"
   yield(number1, number2)
 end
 
-say_goodbye {|number1, number2| puts "Here's a little help: #{number1} + #{number2}"}
+adder {|number1, number2| puts "Here's a little help: #{number1} + #{number2}"}
 
 ############
 
@@ -39,3 +39,34 @@ musicians.each do |band, member|
 end
 
 p musicians
+
+############
+
+numbers = [1, 2, 3, 4]
+
+pairs = {
+"a" => 1,
+"b" => 22,
+"c" => 3,
+"d" => 9
+}
+
+# 1:
+#Delete any numbers that are less than 3
+p numbers
+numbers.keep_if{|digit| digit > 2}
+p numbers
+
+p numbers
+numbers.delete_if{|digit| digit < 3}
+p numbers
+
+#Delete any letters greater than or equal to"b"
+p pairs
+pairs.delete_if{|letter, number| letter >= "b"}
+p pairs
+
+#Delete any numbers greter than or equal to 2
+p pairs
+pairs.delete_if{|letter, number| number >= 2}
+p pairs
