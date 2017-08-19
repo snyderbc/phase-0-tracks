@@ -51,7 +51,7 @@ pairs = {
 "d" => 9
 }
 
-# 1:
+puts "Question 1"
 #Delete any numbers that are less than 3
 
 p numbers
@@ -64,7 +64,7 @@ p pairs
 pairs.delete_if{|letter, number| number >= 2}
 p pairs
 
-#2:
+puts "Question 2"
 numbers = [1, 2, 3, 4]
 
 pairs = {
@@ -84,7 +84,35 @@ p pairs
 pairs.keep_if{|letter, number| letter > "b"}
 p pairs
 
-# 3.
+puts "Question 3"
+numbers = [1, 2, 3, 4]
+
+pairs = {
+"a" => 1,
+"b" => 22,
+"c" => 3,
+"d" => 9
+}
+
+new_numbers = []
+
+p numbers
+p new_numbers
+new_numbers = numbers.take_while {|digit| digit < 3}
+p numbers
+p new_numbers
+
+new_pairs = {}
+
+p pairs
+p new_pairs
+new_pairs = pairs.reject {|letter, digit| letter > "b"}
+p pairs
+p new_pairs
+
+
+puts "Question 4"
+
 numbers = [1, 2, 3, 4]
 
 pairs = {
@@ -102,10 +130,6 @@ new_numbers = numbers.drop_while {|digit| digit < 3}
 p numbers
 p new_numbers
 
-new_pairs = {}
-
 p pairs
-p new_pairs
-new_pairs = pairs.reject {|letter, digit| letter > "b"}
+pairs.delete_if{|letter, digit| letter <= "c"}
 p pairs
-p new_pairs
