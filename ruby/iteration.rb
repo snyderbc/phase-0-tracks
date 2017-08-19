@@ -53,20 +53,35 @@ pairs = {
 
 # 1:
 #Delete any numbers that are less than 3
-p numbers
-numbers.keep_if{|digit| digit > 2}
-p numbers
 
 p numbers
 numbers.delete_if{|digit| digit < 3}
 p numbers
 
-#Delete any letters greater than or equal to"b"
-p pairs
-pairs.delete_if{|letter, number| letter >= "b"}
-p pairs
 
-#Delete any numbers greter than or equal to 2
+#Delete any numbers greater than or equal to 2
 p pairs
 pairs.delete_if{|letter, number| number >= 2}
 p pairs
+
+#2:
+numbers = [1, 2, 3, 4]
+
+pairs = {
+"a" => 1,
+"b" => 22,
+"c" => 3,
+"d" => 9
+}
+
+#Keep any numbers less than or equal to 2
+p numbers
+numbers.keep_if{|digit| digit <= 2}
+p numbers
+
+##Keep any numbers greater than "b"
+p pairs
+pairs.keep_if{|letter, number| letter > "b"}
+p pairs
+
+# 3.
