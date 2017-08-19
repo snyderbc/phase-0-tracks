@@ -42,9 +42,11 @@ p letters
 def next_consonant(letter2)
   lower_letter = letter2.downcase
   consonant_position = "bcdfghjklmnpqrstvwxyz".index(lower_letter)
-  if consonant_position != nil
+  if consonant_position.to_i == 20
+    next_consonant = "b"
+  elsif consonant_position != nil
     next_consonant = "bcdfghjklmnpqrstvwxyz"[(consonant_position.to_i + 1)]
-  else next_vowel = lower_letter
+  else next_consonant = lower_letter
   end
 end
 
