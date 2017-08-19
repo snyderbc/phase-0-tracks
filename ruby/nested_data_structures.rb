@@ -23,14 +23,14 @@ toy_store = {
       yahtzee: 9
       },
     brands: [
-      "AEG",
+      "aeg",
       "G3",
       "Mayfair Games"
       ]
   },
 
 
-  books: {
+  book_collection: {
     room_name: "Reading Room",
     books: {
       giving_tree: 3,
@@ -45,4 +45,15 @@ toy_store = {
   }
 }
 
+p toy_store
+
+p toy_store[:book_collection][:books][:animorphs]
+
+toy_store[:board_games][:games][:life] = 1
+p toy_store
+
+toy_store[:board_games][:brands][0].upcase!
+p toy_store
+
+toy_store[:stuffed_animals][:animals][:monkey] = 2
 p toy_store
