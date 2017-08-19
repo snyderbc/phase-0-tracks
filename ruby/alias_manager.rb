@@ -27,7 +27,9 @@ p letters.class
 
 def next_vowel(letter)
   vowel_position = "aeiou".index(letter)
-  if vowel_position != nil
+  if vowel_position.to_i == 4
+    next_vowel = "a"
+  elsif vowel_position != nil
     next_vowel = "aeiou"[(vowel_position.to_i + 1)]
   else next_vowel = letter
   end
