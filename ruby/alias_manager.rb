@@ -19,20 +19,27 @@ p name_string.class
 p name_string
 
 #Breaks name_string into individual characters, but it is still a string.
-p name_string.chars
-p name_string.class
+p letters = name_string.split('')
+p letters.class
 
 
 #Look through the characters one by one, via an index loop. If the index value returns as a vowel, change it so the value advances by one index.
 
-
-
-def next_vowel(vowel)
-  vowel_position = "aeiou".index(vowel)
-  next_vowel = "aeiou"[(vowel_position.to_i + 1)]
+def next_vowel(letter)
+  vowel_position = "aeiou".index(letter)
+  if vowel_position != nil
+    next_vowel = "aeiou"[(vowel_position.to_i + 1)]
+  else next_vowel = letter
+  end
 end
 
-p next_vowel("a")
+letters.map! { |x| next_vowel(x)}
+p letters
+
+
+
+#Apply the next
+
 #Check each character of the string to see if any of them are in the vowel string. If they are, advance them to the next vowel in the vowel string. gsub?
 
 
