@@ -49,6 +49,14 @@ end
 letters.map! { |x| next_consonant(x)}
 p letters
 
+final_output = letters.join('')
+separate_names = final_output.split (' ')
+p separate_names
+p separate_names.class
+
+final_output = separate_names[0].capitalize + " " +separate_names[1].capitalize
+
+p final_output
 #Apply the next
 
 #Check each character of the string to see if any of them are in the vowel string. If they are, advance them to the next vowel in the vowel string. gsub?
