@@ -85,3 +85,27 @@ pairs.keep_if{|letter, number| letter > "b"}
 p pairs
 
 # 3.
+numbers = [1, 2, 3, 4]
+
+pairs = {
+"a" => 1,
+"b" => 22,
+"c" => 3,
+"d" => 9
+}
+
+new_numbers = []
+
+p numbers
+p new_numbers
+new_numbers = numbers.drop_while {|digit| digit < 3}
+p numbers
+p new_numbers
+
+new_pairs = {}
+
+p pairs
+p new_pairs
+new_pairs = pairs.reject {|letter, digit| letter > "b"}
+p pairs
+p new_pairs
