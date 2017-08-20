@@ -1,10 +1,12 @@
 #Take a full name (first and last) - will be input as a string.
-
-full_name = "Felicia Torres"
+user_input = " "
+until user_input == "quit"
+  puts "Enter a name:"
+  user_input = gets.chomp
 
 #Separate the first name from the last name, and swap them
 
-p full_name = "Felicia Torres".split(' ')
+full_name = user_input.split(' ')
 #Converts full name to an array
 p full_name.class
 
@@ -71,3 +73,5 @@ p final_output
 #Return the fake name
 
 #capitalize string
+
+end
