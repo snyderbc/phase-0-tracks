@@ -2,13 +2,15 @@
 user_input = " "
 original_input = []
 alias_output = []
+
+  #Store all user input in a data structure
+
 loop do
   puts "Enter a name:"
   user_input = gets.chomp
   original_input << user_input
   break if user_input == "quit"
 
-  #Store all user input in a data structure
 
   #Separate the first name from the last name, and  swap them
 
@@ -26,7 +28,7 @@ loop do
   p name_string.class
   p name_string
 
-  #Breaks name_string into individual characters, but   it is still a string.
+  #Breaks name_string into individual characters, but it is still a string.
   p letters = name_string.split('')
   p letters.class
 
