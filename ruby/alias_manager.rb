@@ -1,8 +1,9 @@
 #Take a full name (first and last) - will be input as a string.
 user_input = " "
-until user_input == "quit"
+loop do
   puts "Enter a name:"
   user_input = gets.chomp
+  break if user_input == "quit"
 
 #Separate the first name from the last name, and swap them
 
