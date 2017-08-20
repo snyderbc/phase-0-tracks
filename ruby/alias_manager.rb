@@ -82,3 +82,10 @@ p alias_output
 
 puts
 
+#Ensure "quit" does not display
+number_of_names = alias_output.length
+
+number_of_names.times do |x|
+  puts "#{alias_output[x]} is actually #{original_input[x]}"
+end
+
