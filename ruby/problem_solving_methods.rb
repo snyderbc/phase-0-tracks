@@ -26,6 +26,9 @@ p search_array(arr, 1)
 
 ###Release 1: Fibonacci Numbers
 
+
+#Create an array that already has 0 and 1 stored. Then, for each number entered, add it to the previous number and store it in an array.
+
 def fib(quantity)
   fib_array = [0, 1]
   fib_number = 0
@@ -37,7 +40,20 @@ fib(100)
 
 
 
+######### Release 2: Sort an Array
 
-#Create an array that already has 0 and 1 stored. Then, for each number entered, add it to the previous number and store it in an array.
+#Take an array of integers. At each index of the array, check to see if the integer at the next index is smaller. If it the next integer is a smaller number, swap them. If not, leave the order asis. Continue to do this until the integers are ordered from lowest to highest.
 
-#create a method that starts at zero, then
+def bubble_sort(array)
+
+  n = array.length
+
+  loop do
+    swapped = false
+
+    (n-1).times do |i|
+      if array[i] > array[i+1]
+
+
+
+# https://www.youtube.com/watch?v=x9G7_1RvyB8
