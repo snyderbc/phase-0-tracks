@@ -10,19 +10,16 @@ arr = [42, 89, 23, 1]
 
 def search_array (array, integer)
     times = 0
-    match_location = ""
       array.each do |number|
         if number == integer
-            match_location = times
-        else
-            match_location = nil
+          return times
         end
       times += 1
       end
-    match_location
+    return nil
 end
 
-p search_array(arr, 1)
+p search_array(arr, 13)
 
 ###Release 1: Fibonacci Numbers
 
@@ -44,16 +41,17 @@ fib(100)
 
 #Take an array of integers. At each index of the array, check to see if the integer at the next index is smaller. If it the next integer is a smaller number, swap them. If not, leave the order asis. Continue to do this until the integers are ordered from lowest to highest.
 
-def bubble_sort(array)
+# def bubble_sort(array)
 
-  n = array.length
+#   n = array.length
 
-  loop do
-    swapped = false
+#   loop do
+#     swapped = false
 
-    (n-1).times do |i|
-      if array[i] > array[i+1]
+#     (n-1).times do |i|
+#       if array[i] > array[i+1]
+#   end
 
 
 
-# https://www.youtube.com/watch?v=x9G7_1RvyB8
+#https://www.youtube.com/watch?v=x9G7_1RvyB8
