@@ -39,19 +39,29 @@ fib(100)
 
 ######### Release 2: Sort an Array
 
-#Take an array of integers. At each index of the array, check to see if the integer at the next index is smaller. If it the next integer is a smaller number, swap them. If not, leave the order asis. Continue to do this until the integers are ordered from lowest to highest.
+#Take an array of integers. At each index of the array, check to see if the integer at the next index is smaller. If the next integer is a smaller number, swap them. If not, leave the order as is. Continue to do this until the integers are ordered from lowest to highest.
 
-# def bubble_sort(array)
+def bubble_sort(array)
 
-#   n = array.length
+n = array.length
 
-#   loop do
-#     swapped = false
+  loop do
+    swapped = false
 
-#     (n-1).times do |i|
-#       if array[i] > array[i+1]
-#   end
+    (n-1).times do |i|
+      if array[i] > array[i+1]
+        array[i], array[i+1] = array[i+1], array[i]
+        swapped = true
+      end
+    end
+    break if not swapped
+  end
+  array
+end
 
+arr = [9, 1, 12, 7, 89, 2]
+
+p bubble_sort(arr)
 
 
 #https://www.youtube.com/watch?v=x9G7_1RvyB8
