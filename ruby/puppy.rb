@@ -1,11 +1,18 @@
-SPECIES ---------------
-Puppy
+# SPECIES ---------------
+# Puppy
 
 
-CHARACTERISTICS ----------------
+# CHARACTERISTICS ----------------
+# Energy-level: high
+# Adorable: yes
+# Fluffy: varies
+# Paws: 4
+# Destructuve: yes
+# Color: varies
 
 
-
-
-BEHAVIOR -----------------------------
-
+# BEHAVIOR -----------------------------
+# Chew
+# Bark
+# Lick
+# Run
