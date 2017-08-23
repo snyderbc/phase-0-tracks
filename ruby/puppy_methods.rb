@@ -26,9 +26,15 @@ class Puppy
     p "*sit*"
   end
 
+  def initialize
+    puts "Initializing new puppy instance..."
+  end
+
 end
 
 lab = Puppy.new
+pit_bull = Puppy.new
+
 p lab.fetch("ball") == "I brought back the ball!"
 
 p lab.speak(3) == "Woof!"
