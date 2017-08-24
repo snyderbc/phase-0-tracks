@@ -37,27 +37,37 @@ def create_list(items)
   grocery_list
 end
 
-# grocery_list = create_list
-# p grocery_list
-
-
-p test_grocery_list = create_list("orange apple plum")
 
 def add_item(list_hash, item_name, quantity)
     list_hash[item_name] = quantity
     list_hash
 end
 
-p add_item(test_grocery_list, "peach", 2)
+def remove_item(list_hash, item_name)
+    list_hash.delete_if{|fruit, value| fruit == item_name}
+    list_hash
+end
 
+def update_quantity(list_hash, item_name, new_quantity)
+    list_hash[item_name] = new_quantity
+    list_hash
+end
 
-
-
+def look_pretty(list_hash)
+  list_hash.each {|food, quantity| puts "#{food}: #{quantity}"}
+end
 
 # # Driver Code ##########################################
 
 # # Doin` the stuff
 
-# add_item(grocery_list, cantalope, 2) #line 47-50 or 52-55
 
+p test_grocery_list = create_list("orange apple plum")
 
+p add_item(test_grocery_list, "peach", 2)
+
+p remove_item(test_grocery_list, "orange")
+
+p update_quantity(test_grocery_list, "peach", 3)
+
+look_pretty(test_grocery_list)
