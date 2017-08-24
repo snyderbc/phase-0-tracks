@@ -31,7 +31,7 @@
 # Main ##################################################
 
 def create_list(items)
-  grocery_list = Hash.new(0) #other method is only local in grocery_list
+  grocery_list = Hash.new(0)
   food_array = items.split(" ")
   food_array.each{|food| grocery_list[food] = 1}
   grocery_list
@@ -59,15 +59,16 @@ end
 
 # # Driver Code ##########################################
 
-# # Doin` the stuff
 
+p test_grocery_list = create_list("")
 
-p test_grocery_list = create_list("orange apple plum")
+p add_item(test_grocery_list, "Lemonade", 2)
+p add_item(test_grocery_list, "Tomatoes", 3)
+p add_item(test_grocery_list, "Onions", 1)
+p add_item(test_grocery_list, "Ice Cream", 4)
 
-p add_item(test_grocery_list, "peach", 2)
+p remove_item(test_grocery_list, "Lemonade")
 
-p remove_item(test_grocery_list, "orange")
-
-p update_quantity(test_grocery_list, "peach", 3)
+p update_quantity(test_grocery_list, "Ice Cream", 1)
 
 look_pretty(test_grocery_list)
