@@ -1,5 +1,8 @@
 class Santa
 
+  attr_reader :age, :ethnicity
+  attr_accessor :gender
+
   def initialize(gender, ethnicity)
     puts "Initiaizing Santa instance..."
     @gender = gender
@@ -27,23 +30,13 @@ class Santa
     @reindeer_ranking
   end
 
-#Setter method
-  def gender=(new_gender)
-    @gender = new_gender
+  def about
+    puts "Age: #{@age}"
+    puts "Gender: #{@gender}"
+    puts "Ethnicity: #{@ethnicity}"
+    puts "Reindeer Ranking: #{@reindeer_ranking}"
   end
 
-#Getter methods
-  def gender
-    @gender
-  end
-
-  def age
-    @age
-  end
-
-  def ethnicity
-    @ethnicity
-  end
 end
 
 ########DRIVER CODE###############
@@ -60,13 +53,15 @@ santa_genders.length.times do |i|
 #Test instance methods on current Santa instances housed in above array
 
 santas.each do |instance|
+  instance.about
   instance.speak
   instance.eat_milk_and_cookies("chocolate chip")
   instance.get_mad_at("Rudolph")
   instance.celebrate_birthday
+  instance.about
   puts "This santa's age is #{instance.age}, and ethnicity is #{instance.ethnicity}"
   instance.gender = "female"
+  instance.about
   puts "Now all of the santas are #{instance.gender}, mwahaha"
 end
-
 
