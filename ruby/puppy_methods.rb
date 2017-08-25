@@ -69,34 +69,17 @@ class Fruit
 
 end
 
-
-
-# 50.times do |num|
-#   num.to_sym = Fruit.new("crunch")
-# end
-
-# 50.times do |num|
-#   num_string = num.to_s
-#   num_string= Fruit.new("crunch")
-# end
-
-fruit_list = {}
+fruit_array = []
 
 50.times do |num|
-  fruit_list[num] = Fruit.new("splat")
-  end
-p fruit_list
+  fruit_instance = Fruit.new("crunch")
+  fruit_array << fruit_instance
+end
 
-p fruit_list[49.to_s]
+p fruit_array
 
-fruit_list.each do |num_name, a_fruit|
-    a_fruit.rots(num_name + 1)
-    a_fruit.grow(num_name.to_s + "apple")
-  end
+fruit_array.each do |instance|
+  instance.rots(2)
+  instance.grow("cabbage")
+end
 
-
-  50.times do |num|
-  Fruit.new("splat")
-  end
-
-  p fruit_list
