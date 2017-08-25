@@ -17,7 +17,7 @@ class Santa
   end
 
   def celebrate_birthday
-    @age + 1
+    p @age + 1
   end
 
   def get_mad_at(reindeer_name)
@@ -47,6 +47,7 @@ santas.each do |instance|
   instance.speak
   instance.eat_milk_and_cookies("chocolate chip")
   instance.get_mad_at("Rudolph")
+  instance.celebrate_birthday
 end
 
 
