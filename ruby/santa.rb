@@ -1,5 +1,13 @@
 class Santa
 
+  def initialize(gender, ethnicity)
+    puts "Initiaizing Santa instance..."
+    @gender = gender
+    @ethnicity = ethnicity
+    @reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
+    @age = 0
+  end
+
   def speak
     puts "Ho, ho, ho! Haaaappy holidays!"
   end
@@ -8,12 +16,15 @@ class Santa
     puts "That was a good #{cookie_type} cookie!"
   end
 
-  def initialize(gender, ethnicity)
-    puts "Initiaizing Santa instance..."
-    @gender = gender
-    @ethnicity = ethnicity
-    @reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
-    @age = 0
+  def celebrate_birthday
+    @age + 1
+  end
+
+  def get_mad_at(reindeer_name)
+    bad_reindeer_location = @reindeer_ranking.index(reindeer_name)
+    @reindeer_ranking.delete_at(bad_reindeer_location)
+    @reindeer_ranking << reindeer_name
+    p @reindeer_ranking
   end
 
 end
@@ -35,5 +46,7 @@ santa_genders.length.times do |i|
 santas.each do |instance|
   instance.speak
   instance.eat_milk_and_cookies("chocolate chip")
+  instance.get_mad_at("Rudolph")
 end
+
 
