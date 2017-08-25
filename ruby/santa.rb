@@ -17,24 +17,40 @@ class Santa
   end
 
   def celebrate_birthday
-    p @age + 1
+    @age += 1
   end
 
   def get_mad_at(reindeer_name)
     bad_reindeer_location = @reindeer_ranking.index(reindeer_name)
     @reindeer_ranking.delete_at(bad_reindeer_location)
     @reindeer_ranking << reindeer_name
-    p @reindeer_ranking
+    @reindeer_ranking
   end
 
-end
+#Setter method
+  def gender=(new_gender)
+    @gender = new_gender
+  end
 
+#Getter methods
+  def gender
+    @gender
+  end
+
+  def age
+    @age
+  end
+
+  def ethnicity
+    @ethnicity
+  end
+end
 
 ########DRIVER CODE###############
 
 #Create several instances of Santa class, with diverse genders and ethnicities
 santas = []
-santa_genders = ["genderless", "pangender", "female", "queer", "male"]
+santa_genders = ["genderless", "pangender", "male", "queer", "male"]
 santa_ethnicities = ["hispanic", "white", "black", "native american", "asian"]
 
 santa_genders.length.times do |i|
@@ -48,6 +64,9 @@ santas.each do |instance|
   instance.eat_milk_and_cookies("chocolate chip")
   instance.get_mad_at("Rudolph")
   instance.celebrate_birthday
+  puts "This santa's age is #{instance.age}, and ethnicity is #{instance.ethnicity}"
+  instance.gender = "female"
+  puts "Now all of the santas are #{instance.gender}, mwahaha"
 end
 
 
