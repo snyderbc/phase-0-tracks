@@ -42,29 +42,29 @@ end
 ########DRIVER CODE###############
 
 #Create several instances of Santa class, with diverse genders and ethnicities
-# santas = []
-# santa_genders = ["genderless", "pangender", "male", "queer", "male"]
-# santa_ethnicities = ["hispanic", "white", "black", "native american", "asian"]
+santas = []
+santa_genders = ["genderless", "pangender", "male", "queer", "male"]
+santa_ethnicities = ["hispanic", "white", "black", "native american", "asian"]
 
-# santa_genders.length.times do |i|
-#   santas << Santa.new(santa_genders[i], santa_ethnicities[i])
-#   end
+santa_genders.length.times do |i|
+  santas << Santa.new(santa_genders[i], santa_ethnicities[i])
+  end
 
 
 #Test instance methods on current Santa instances housed in above array
 
-# santas.each do |instance|
-#   instance.about
-#   instance.speak
-#   instance.eat_milk_and_cookies("chocolate chip")
-#   instance.get_mad_at("Rudolph")
-#   instance.celebrate_birthday
-#   instance.about
-#   puts "This santa's age is #{instance.age}, and ethnicity is #{instance.ethnicity}"
-#   instance.gender = "female"
-#   instance.about
-#   puts "Now all of the santas are #{instance.gender}, mwahaha"
-# end
+santas.each do |instance|
+  instance.about
+  instance.speak
+  instance.eat_milk_and_cookies("chocolate chip")
+  instance.get_mad_at("Rudolph")
+  instance.celebrate_birthday
+  instance.about
+  puts "This santa's age is #{instance.age}, and ethnicity is #{instance.ethnicity}"
+  instance.gender = "female"
+  instance.about
+  puts "Now all of the santas are #{instance.gender}, mwahaha"
+end
 
 #Program to build many, many santas
 
@@ -80,4 +80,4 @@ def santa_creator(number_of_santas)
     end
 end
 
-santa_creator(1000)
+santa_creator(100)
