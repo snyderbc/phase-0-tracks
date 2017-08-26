@@ -13,10 +13,18 @@ def initialize(item_array)
   @get_items = item_array
 end
 
-#"adds an item to the list"
+#adds an item to the list
 def add_item(item_to_add)
   @get_items << item_to_add
 end
+
+#deletes an item
+def delete_item(item_to_delete)
+  @get_items.delete(item_to_delete)
+end
+
+#retrieves an item by index
+def
 
 
 end
