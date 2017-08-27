@@ -7,4 +7,13 @@
 # Start with a guesses available variable that takes the inputted word length and adds 5
 
 class WordGame
+
+  def encryptor(string)
+    string_arr = string.split("")
+    string.length.times do |i| string_arr[i] = "_"
+    end
+    guessed_word = string_arr.join
+  end
+
+
 end

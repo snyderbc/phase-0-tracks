@@ -21,6 +21,8 @@ require_relative 'game'
 
 describe WordGame do
   it "takes a string, and replaces each character in the string with an underscore" do
+    wordgame = WordGame.new
+    expect(wordgame.encryptor("unicorn")).to eq ("_______")
   end
 
   it "checks to see if a letter is in a string. If it is, it adds that letter to another string, and increases the guess count by one. It is is and now the to strings are equal, it sets the game to won" do
