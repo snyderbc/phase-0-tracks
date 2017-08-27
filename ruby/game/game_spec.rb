@@ -29,7 +29,7 @@
 require_relative 'game'
 
 describe WordGame do
-  let(:wordgame) { WordGame.new("unicorn") }
+  let(:wordgame) {WordGame.new("unicorn")}
 
     it "stores the first users input given on   initiaization" do
     expect(wordgame.mystery_word).to eq "unicorn"
@@ -48,12 +48,12 @@ describe WordGame do
     end
 
     it "takes the string provided at initalization, and replaces each character in the string with an underscore" do
-    expect(wordgame.encryptor).to eq ("_______")
+    expect(wordgame.guessed_word).to eq ("_______")
     end
 
-  it "checks to see if a letter is in a string. If it is, it adds that letter to another string, and increases the guess count by one. If it is and now the to strings are equal, it sets the game to won" do
-  expect(wordgame.letter_check("c")). to eq ("___c___")
-  end
+  # it "checks to see if a letter is in a string. If it is, it adds that letter to another string, and increases the guess count by one. If it is and now the two strings are equal, it sets the game to won" do
+  # expect(wordgame.letter_check("c")). to eq ("___c___")
+  # end
 
   # it "takes a string, determines how long it is, and adds 5 to that length" do
 
