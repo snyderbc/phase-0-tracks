@@ -31,10 +31,21 @@ require_relative 'game'
 describe WordGame do
   let(:wordgame) { WordGame.new("unicorn") }
 
-  it "stores the first users input given on   initiaization" do
+    it "stores the first users input given on   initiaization" do
     expect(wordgame.mystery_word).to eq "unicorn"
-  end
+    end
 
+    it "stores the guess number as zero on   initialization" do
+    expect(wordgame.guesses).to eq 0
+    end
+
+    it "stores the game is over variable to false on initialization" do
+    expect(wordgame.is_over).to eq false
+    end
+
+    it "stores guesses available as the mystery word length plus 3" do
+    expect(wordgame.guesses_available).to eq 10
+    end
 
   # it "takes a string, and replaces each character in the string with an underscore" do
   #   expect(wordgame.encryptor).to eq ("_______")

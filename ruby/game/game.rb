@@ -2,7 +2,7 @@
 
 class WordGame
 
-attr_reader :mystery_word
+attr_reader :mystery_word, :guesses, :is_over, :guesses_available
 
   def initialize(mystery_word)
     @mystery_word = mystery_word
