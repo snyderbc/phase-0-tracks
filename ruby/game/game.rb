@@ -28,6 +28,16 @@ attr_reader :mystery_word, :guesses, :is_over, :guesses_available, :guessed_word
   #     @guessed_word
   #   end
   # end
+
+  def letter_check(letter)
+    if (mystery_word.include? letter) && (@guessed_word.include? letter) == false
+        letter_index = mystery_word.index(letter)
+        @guessed_word[letter_index] = letter
+        @guesses += 1
+        @guessed_word
+    end
+  end
+
 end
 
 
