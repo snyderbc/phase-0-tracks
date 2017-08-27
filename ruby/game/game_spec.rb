@@ -1,3 +1,12 @@
+# Attributes:
+
+# Start with a word (mystery word) – this will be taken from the first user
+# Start with no guesses made yet
+# Start with a state that indicates they haven’t won yet
+# Start with a blank word that is made up of the # of underscores equivalent to the length of the inputted word(guessed word)
+# Start with a guesses available variable that takes the inputted word length and adds 3
+
+
 # String Encryptor
 # Input : string (mystery word)
 # Take a string, and replace every character of that string with an underscore
@@ -20,15 +29,21 @@
 require_relative 'game'
 
 describe WordGame do
-  it "takes a string, and replaces each character in the string with an underscore" do
-    wordgame = WordGame.new
-    expect(wordgame.encryptor("unicorn")).to eq ("_______")
+  let(:wordgame) { WordGame.new("unicorn") }
+
+  it "stores the first users input given on   initiaization" do
+    expect(wordgame.mystery_word).to eq "unicorn"
   end
 
-  it "checks to see if a letter is in a string. If it is, it adds that letter to another string, and increases the guess count by one. It is is and now the to strings are equal, it sets the game to won" do
-  end
 
-  it "takes a string, determines how long it is, and adds 5 to that length" do
-  end
+  # it "takes a string, and replaces each character in the string with an underscore" do
+  #   expect(wordgame.encryptor).to eq ("_______")
+  # end
+
+  # it "checks to see if a letter is in a string. If it is, it adds that letter to another string, and increases the guess count by one. If it is and now the to strings are equal, it sets the game to won" do
+  #   expect(wordgame.letter_check("c")). to eq ("___c___")
+  # end
+
+  # it "takes a string, determines how long it is, and adds 5 to that length" do
 
 end

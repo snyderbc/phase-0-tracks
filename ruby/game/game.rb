@@ -1,19 +1,34 @@
-# Attributes:
 
-# Start with a word (mystery word) – this will be taken from the first user
-# Start with no guesses made yet
-# Start with a state that indicates they haven’t won yet
-# Start with a blank word that is made up of the # of underscores equivalent to the length of the inputted word(guessed word)
-# Start with a guesses available variable that takes the inputted word length and adds 5
 
 class WordGame
 
-  def encryptor(string)
-    string_arr = string.split("")
-    string.length.times do |i| string_arr[i] = "_"
+attr_reader :mystery_word
+
+  def initialize(mystery_word)
+    @mystery_word = mystery_word
+    @guesses = 0
+    @is_over = false
+    #@guessed_word = mystery_word.encryptor
+    @guesses_available = mystery_word.length + 3
+  end
+
+  def encryptor
+    string_arr = @mystery_word.split("")
+    @mystery_word.length.times do |i| string_arr[i] = "_"
     end
     guessed_word = string_arr.join
   end
+# Letter Checker
+# Input: letter (string)
+# Take a letter, and see if it is in a string (mystery word)
+#   If the input letter was not already in the string, add one to the guess count and add the letter to the guessed word string
+#   If the letter was already in the string, do nothing
+# If adding that letter makes the mystery word equal to the guessed word, the game has now been won
+# Output (guessed word)
+
+def letter_check(letter)
+end
+
 
 
 end
