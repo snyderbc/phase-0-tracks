@@ -2,7 +2,7 @@
 
 class WordGame
 
-attr_reader :mystery_word, :guesses, :is_over, :guesses_available
+attr_reader :mystery_word, :guesses, :is_over, :guesses_available, :guessed_word
 
   def initialize(mystery_word)
     @mystery_word = mystery_word
@@ -26,9 +26,10 @@ attr_reader :mystery_word, :guesses, :is_over, :guesses_available
 # If adding that letter makes the mystery word equal to the guessed word, the game has now been won
 # Output (guessed word)
 
-def letter_check(letter)
-end
-
-
+  def letter_check(letter)
+    if mystery_word.include? letter && guessed_word.  include? letter == false
+      guesses +=1
+      letter_index = mystery_word.index(letter)
+      guessed_word(letter_index) = lette  en
 
 end

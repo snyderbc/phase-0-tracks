@@ -51,9 +51,9 @@ describe WordGame do
     expect(wordgame.encryptor).to eq ("_______")
     end
 
-  # it "checks to see if a letter is in a string. If it is, it adds that letter to another string, and increases the guess count by one. If it is and now the to strings are equal, it sets the game to won" do
-  #   expect(wordgame.letter_check("c")). to eq ("___c___")
-  # end
+  it "checks to see if a letter is in a string. If it is, it adds that letter to another string, and increases the guess count by one. If it is and now the to strings are equal, it sets the game to won" do
+  expect(wordgame.letter_check("c")). to eq ("___c___")
+  end
 
   # it "takes a string, determines how long it is, and adds 5 to that length" do
 
