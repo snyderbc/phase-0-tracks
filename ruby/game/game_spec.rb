@@ -43,7 +43,7 @@ describe WordGame do
     expect(wordgame.is_over).to eq false
     end
 
-    it "stores guesses available as the mystery word length plus 3" do
+    it "stores guesses available as the mystery word length plus 3 on initiation" do
     expect(wordgame.guesses_available).to eq 10
     end
 
@@ -54,7 +54,5 @@ describe WordGame do
   it "checks to see if a letter is in a string. If it is, it adds that letter to another string, and increases the guess count by one. If it is and now the two strings are equal, it sets the game to won" do
   expect(wordgame.letter_check("c")). to eq ("___c___")
   end
-
-  # it "takes a string, determines how long it is, and adds 5 to that length" do
 
 end
