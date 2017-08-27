@@ -47,9 +47,9 @@ describe WordGame do
     expect(wordgame.guesses_available).to eq 10
     end
 
-  # it "takes a string, and replaces each character in the string with an underscore" do
-  #   expect(wordgame.encryptor).to eq ("_______")
-  # end
+    it "takes the string provided at initalization, and replaces each character in the string with an underscore" do
+    expect(wordgame.encryptor).to eq ("_______")
+    end
 
   # it "checks to see if a letter is in a string. If it is, it adds that letter to another string, and increases the guess count by one. If it is and now the to strings are equal, it sets the game to won" do
   #   expect(wordgame.letter_check("c")). to eq ("___c___")
