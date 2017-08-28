@@ -39,7 +39,6 @@ describe WordGame do
     expect(wordgame.guesses).to eq 0
     end
 
-
     it "stores guesses available as the mystery word length plus 3 on initiation" do
     expect(wordgame.guesses_available).to eq 10
     end
