@@ -26,7 +26,7 @@ attr_reader :mystery_word, :guesses, :is_over, :guesses_available, :guessed_word
     else
       @guesses += 1
       @guesses_remaining = @guesses_available - @guesses
-      puts "Close, but not cigar. Try again, you've got #{guesses_remaining} guesses remaining."
+      puts "Close, but not cigar. You've got #{guesses_remaining} guesses remaining."
     end
   end
 
@@ -42,8 +42,9 @@ end
 
 user_guesses = []
 
-puts "Welcome to the Word Game! Give me a word, and we'll see if your friend is smart enough to guess it:"
-user1_input = gets.chomp
+puts "Welcome to the Word Game! Type a word and hit 'enter', and we'll see if your friend is smart enough to guess it:"
+require 'io/console'
+user1_input = STDIN.noecho(&:gets)
 wordgame = WordGame.new(user1_input)
 
 puts "Thanks! Now let your friend guess a letter, one at a time. Choose wisely - you only get #{wordgame.guesses_available} guesses!"
