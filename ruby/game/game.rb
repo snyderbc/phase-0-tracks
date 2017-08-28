@@ -2,7 +2,7 @@
 
 class WordGame
 
-attr_reader :mystery_word, :guesses, :is_over, :guesses_available, :guessed_word
+attr_reader :mystery_word, :guesses, :is_over, :guesses_available, :guessed_word, :guesses_remaining
 
   def initialize(mystery_word)
     @mystery_word = mystery_word
@@ -24,7 +24,9 @@ attr_reader :mystery_word, :guesses, :is_over, :guesses_available, :guessed_word
         @guessed_word[letter_index] = letter
         @guessed_word
     else
-      @guesses +=1
+      @guesses += 1
+      @guesses_remaining = @guesses_available - @guesses
+      puts "Close, but not cigar. Try again, you've got #{guesses_remaining} guesses remaining."
     end
   end
 
@@ -54,7 +56,7 @@ until (wordgame.mystery_word == wordgame.guessed_word) || (wordgame.guesses == w
       user_guesses << user_guess
         if user_guesses.count(user_guess) > 1
         puts "You already guessed that! Maybe you    should try something else?"
-        else p wordgame.letter_check(user_guess)
+        else wordgame.letter_check(user_guess)
         end
 end
 
