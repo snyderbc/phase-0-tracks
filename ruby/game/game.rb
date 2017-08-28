@@ -19,6 +19,12 @@ attr_reader :mystery_word, :guesses, :is_over, :guesses_available, :guessed_word
         @guessed_word[letter_index] = letter
         @guesses += 1
         @guessed_word
+    elsif (mystery_word.include? letter)
+        letter_index = mystery_word.index(letter)
+        @guessed_word[letter_index] = letter
+        @guessed_word
+    else
+      @guesses +=1
     end
   end
 
@@ -32,8 +38,28 @@ end
 # IF he guesses the mystery word before running out of guesses, display a congratulatory message.
 # OTHERWISE Taunt him mercilessly.
 
+user_guesses = []
+
 puts "Welcome to the Word Game! Give me a word, and we'll see if your friend is smart enough to guess it:"
 user1_input = gets.chomp
 wordgame = WordGame.new(user1_input)
 
 puts "Thanks! Now let your friend guess a letter, one at a time. Choose wisely - you only get #{wordgame.guesses_available} guesses!"
+
+user_guesses = []
+
+until (wordgame.mystery_word == wordgame.guessed_word) || (wordgame.guesses == wordgame.guesses_available)
+      puts "Enter a letter to make a guess:"
+      user_guess = gets.chomp
+      user_guesses << user_guess
+        if user_guesses.count(user_guess) > 1
+        puts "You already guessed that! Maybe you    should try something else?"
+        else p wordgame.letter_check(user_guess)
+        end
+end
+
+if (wordgame.mystery_word) == (wordgame.guessed_word)
+  puts "Nicely done! You're one smart cookie!"
+else puts "Wow...That's embarassing. The correct answer was '#{wordgame.mystery_word}'."
+end
+
