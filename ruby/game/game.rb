@@ -18,11 +18,11 @@ attr_reader :mystery_word, :guesses, :is_over, :guesses_available, :guessed_word
         letter_index = mystery_word.index(letter)
         @guessed_word[letter_index] = letter
         @guesses += 1
-        @guessed_word
+        p @guessed_word
     elsif (mystery_word.include? letter)
         letter_index = mystery_word.index(letter)
         @guessed_word[letter_index] = letter
-        @guessed_word
+        p @guessed_word
     else
       @guesses += 1
       @guesses_remaining = @guesses_available - @guesses
@@ -44,7 +44,8 @@ user_guesses = []
 
 puts "Welcome to the Word Game! Type a word and hit 'enter', and we'll see if your friend is smart enough to guess it:"
 require 'io/console'
-user1_input = STDIN.noecho(&:gets)
+user1_raw = STDIN.noecho(&:gets)
+user1_input = user1_raw.chomp.to_s
 wordgame = WordGame.new(user1_input)
 
 puts "Thanks! Now let your friend guess a letter, one at a time. Choose wisely - you only get #{wordgame.guesses_available} guesses!"
