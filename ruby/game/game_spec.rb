@@ -39,9 +39,6 @@ describe WordGame do
     expect(wordgame.guesses).to eq 0
     end
 
-    it "stores the game is over variable to false on initialization" do
-    expect(wordgame.is_over).to eq false
-    end
 
     it "stores guesses available as the mystery word length plus 3 on initiation" do
     expect(wordgame.guesses_available).to eq 10

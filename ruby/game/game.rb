@@ -2,12 +2,11 @@
 
 class WordGame
 
-attr_reader :mystery_word, :guesses, :is_over, :guesses_available, :guessed_word, :guesses_remaining
+attr_reader :mystery_word, :guesses, :guesses_available, :guessed_word, :guesses_remaining
 
   def initialize(mystery_word)
     @mystery_word = mystery_word
     @guesses = 0
-    @is_over = false
     @guesses_available = mystery_word.length + 3
     @guessed_word = mystery_word.tr("abcdefghijklmnopqrstuvwxyz", "_")
   end
