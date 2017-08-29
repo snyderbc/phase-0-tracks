@@ -11,11 +11,13 @@ require_relative 'state_data'
 
 class VirusPredictor
 
+attr_reader :number_of_deaths
 #Upon creating a new instance of this class, establishes a default state of origin, population density, and population.
   def initialize(state_of_origin, population_density, population)
     @state = state_of_origin
     @population = population
     @population_density = population_density
+    @number_of_deaths
   end
 
 
@@ -23,28 +25,49 @@ class VirusPredictor
   def virus_effects
     predicted_deaths
     speed_of_spread
+    print "#{@state} will lose #{@ number_of_deaths} people in this   outbreak and will spread across the state in #{speed} months.\n\n"
   end
 
-private
+
 
 #Uses population density and population of a state to figure out the predicted deaths if there were an outbreak
   def predicted_deaths
     # predicted deaths is solely based on population density
-    if @population_density >= 200
-      number_of_deaths = (@population * 0.4).floor
-    elsif @population_density >= 150
-      number_of_deaths = (@population * 0.3).floor
-    elsif @population_density >= 100
-      number_of_deaths = (@population * 0.2).floor
-    elsif @population_density >= 50
-      number_of_deaths = (@population * 0.1).floor
-    else
-      number_of_deaths = (@population * 0.05).floor
-    end
+    number_of_deaths =
+      if @population_density >= 200
+        (@population * 0.4).floor
+      elsif @population_density >= 150
+        (@population * 0.3).floor
+      elsif @population_density >= 100
+        (@population * 0.2).floor
+      elsif @population_density >= 50
+        (@population * 0.1).floor
+      else
+        (@population * 0.05).floor
+      end
 
-    print "#{@state} will lose #{number_of_deaths} people in this outbreak"
-
+      # print "#{@state} will lose #{ number_of_deaths} people in this   outbreak"
   end
+
+private
+
+# if temperature > 90
+#  statement = ‘it’s really hot!
+# elsif temperature > 80
+#  statement = ‘it’s nice out’
+# else
+#  statement = ‘something’
+# end
+# statement = if temperature > 90
+#  ‘it’s really hot!
+# elsif temperature > 80
+#  ‘it’s nice out’
+# else
+#  ‘something’
+# end
+
+#Have methods do a singular thing, could potentially break out into another method
+
 
 #Uses population density of a state to determine how quickly the virus would spread (in months)
   def speed_of_spread #in months
@@ -52,19 +75,19 @@ private
     # by additional factors we haven't added into this functionality.
     speed = 0.0
 
-    if @population_density >= 200
+      if @population_density >= 200
       speed += 0.5
-    elsif @population_density >= 150
-      speed += 1
-    elsif @population_density >= 100
-      speed += 1.5
-    elsif @population_density >= 50
-      speed += 2
-    else
-      speed += 2.5
-    end
+      elsif @population_density >= 150
+        speed += 1
+      elsif @population_density >= 100
+         speed += 1.5
+      elsif @population_density >= 50
+         speed += 2
+      else
+        speed += 2.5
+      end
 
-    puts " and will spread across the state in #{speed} months.\n\n"
+    # puts " and will spread across the state in #{speed} months.\n\n"
 
   end
 
