@@ -1,30 +1,64 @@
-# Array Drills
+# # Array Drills
 
-zombie_apocalypse_supplies = ["hatchet", "rations", "water jug", "binoculars",
-                              "shotgun", "compass", "CB radio", "batteries"]
+# zombie_apocalypse_supplies = ["hatchet", "rations", "water jug", "binoculars",
+#                               "shotgun", "compass", "CB radio", "batteries"]
 
-# 1. Iterate through the zombie_apocalypse_supplies array using #each,
-# printing each item in the array separated by an asterisk
-# ----
+# # 1. Iterate through the zombie_apocalypse_supplies array using #each,
+# # printing each item in the array separated by an asterisk
+# # ----
 
-# 2. Create a method to see if a particular item (string) is in the
-# zombie_apocalypse_supplies using #each.
-# For instance: are boots in your list of supplies?
-# ----
+# # zombie_apocalypse_supplies.each do |item| puts "#{item}"
+# #   puts "*"
+# # end
 
-# 3. You can't carry too many things, you've only got room in your pack for 5.
-# Remove items in your zombie_apocalypse_supplies in any way you'd like,
-# leaving only 5, using #each.
-# ----
+# # 2. Create a method to see if a particular item (string) is in the
+# # zombie_apocalypse_supplies using #each.
+# # For instance: are boots in your list of supplies?
+# # ----
 
-# 4. You found another survivor! This means you can combine your supplies.
-# Create a new combined supplies list out of your zombie_apocalypse_supplies
-# and their supplies below. You should get rid of any duplicate items.
-# Find the built-in method that helps you accomplish this in the Ruby
-# documentation for Arrays.
-other_survivor_supplies = [ "warm clothes", "rations", "compass", "camp stove",
-                            "solar battery", "flashlight"]
-# ----
+# # def item_checker(arr, str)
+# #   contains_item = false
+# #     arr.each do |item|
+# #     if item == str
+# #       contains_item = true
+# #     else
+# #       contains_item = false
+# #     end
+# #     if contains_item == true
+# #       puts "Yep, we've got a #{str}!"
+# #     end
+# #   end
+# # end
+
+# # item_checker(zombie_apocalypse_supplies, "hatchet")
+
+# # 3. You can't carry too many things, you've only got room in your pack for 5.
+# # Remove items in your zombie_apocalypse_supplies in any way you'd like,
+# # leaving only 5, using #each.
+# # ----
+
+# # zombie_apocalypse_supplies.each do |item|
+# #     if zombie_apocalypse_supplies.index(item) > 2
+# #         zombie_apocalypse_supplies.delete(item)
+# #     end
+# #     p zombie_apocalypse_supplies
+# #   end
+
+
+# # 4. You found another survivor! This means you can combine your supplies.
+# # Create a new combined supplies list out of your zombie_apocalypse_supplies
+# # and their supplies below. You should get rid of any duplicate items.
+# # Find the built-in method that helps you accomplish this in the Ruby
+# # documentation for Arrays.
+# other_survivor_supplies = [ "warm clothes", "rations", "compass", "camp stove",
+#                             "solar battery", "flashlight"]
+
+# # other_survivor_supplies.each do |item| zombie_apocalypse_supplies <<  item
+# #   end
+# # p zombie_apocalypse_supplies
+# # zombie_apocalypse_supplies.uniq!
+# # p zombie_apocalypse_supplies
+# # ----
 
 # Hash Drills
 
