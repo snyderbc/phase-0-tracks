@@ -9,7 +9,17 @@ function reverse(str) {
   for (var i = str.length; i > 0; i += -1) {
    reverseString = reverseString + (str[i-1]);
   }
-  console.log(reverseString);
+  return reverseString;
 }
 
-reverse("hello");
+
+//DRIVER CODE
+//reverse("hello");
+
+// console.log(reverse("pumpkin"))
+
+var reversedWord = (reverse("pumpkin"));
+
+if (1 == 1){
+  console.log("The reversed word is " +reversedWord);
+}
