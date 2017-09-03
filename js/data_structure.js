@@ -41,3 +41,8 @@ console.log(lastCar)
 lastCar.honk("Somewhere Over the Rainbow")
 console.log("======================")
 
+// for (var key in lastCar){
+//   if (lastCar.hasOwnProperty(key)) {
+//     console.log(key + " ->" + lastCar[key]);
+//   }
+// }
