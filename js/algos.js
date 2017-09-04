@@ -15,6 +15,22 @@ function longest_phrase(word_array) {
 }
 
 //DRIVER CODE
-longest_phrase(["long phrase","longest phrase","longer phrase"]);
+// longest_phrase(["long phrase","longest phrase","longer phrase"]);
 
-longest_phrase(["anc","a","d"]);
+// longest_phrase(["anc","a","d"]);
+
+//Find a Key-Value Match Pseudocode
+// Take in two objects at the beginning.Loop through the first object, comparing the first value to each value of the second object, and then the first object's second value to both objects of the second object. If at any point the keys match, check to see if the values match. If the values match, return true.
+//use a for-in loop?
+
+function objectMatch(object1, object2){
+  for (var key in object1) {
+    if (object1.hasOwnProperty(key)) {
+      console.log(key + " -> " + object1[key]);
+  }
+}
+
+}
+
+objectMatch({name: "Steven", age: 54}, {name: "Tamir", age: 54});
+// objectMatch({animal: "Dog", legs: 4}, {animal: "Dog", legs: 3});
