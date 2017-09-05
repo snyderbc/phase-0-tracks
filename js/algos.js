@@ -19,18 +19,37 @@ function longest_phrase(word_array) {
 
 // longest_phrase(["anc","a","d"]);
 
+////////////////////////////////////////////
+
 //Find a Key-Value Match Pseudocode
-// Take in two objects at the beginning.Loop through the first object, comparing the first value to each value of the second object, and then the first object's second value to both objects of the second object. If at any point the keys match, check to see if the values match. If the values match, return true.
-//use a for-in loop?
+// Take in two objects at the beginning.
+// Store the properties of the first object in an array.
+// See if the second object contains any of the array's values as properties.
+    //If it does, store that property in a variable, and see if the values of that property for each of the objects are equal as well. If so, return true. If not, return false.
 
-function objectMatch(object1, object2){
-  for (var key in object1) {
-    if (object1.hasOwnProperty(key)) {
-      console.log(key + " -> " + object1[key]);
-  }
-}
 
-}
+// function objectMatch(object1, object2){
+//   var obj1Array = Object.keys(object1);
+//   var is_match = false;
+//   for (var i = 0; i < obj1Array.length; i++) {
+//       var obj1Prop = obj1Array[i];
+//       if (object2[obj1Prop] != undefined){
+//         var matching_prop = obj1Array[i];
+//           if (object1[matching_prop] === object2.matching_prop){
+//             is_match = true;
+//           }
+//         }
+//       }
+//   }
+//   return is_match;
+// }
 
-objectMatch({name: "Steven", age: 54}, {name: "Tamir", age: 54});
+// //DRIVER CODE
+
+// objectMatch({name: "Steven", age: 54}, {name: "Tamir", age: 54});
 // objectMatch({animal: "Dog", legs: 4}, {animal: "Dog", legs: 3});
+
+//Note to grader: after several hours of trying, I wasn't able to get my objectMatch function to work correctly. I feel like I'm really close? The error message I'm getting is pretty vague, can't seem to pinpoint the problem.If you can tell me where my mistake is, would love to hear what I did wrong!
+
+////////////////////////////////////////
+
