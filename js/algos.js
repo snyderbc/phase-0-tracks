@@ -53,3 +53,51 @@ function longest_phrase(word_array) {
 
 ////////////////////////////////////////
 
+//Take in an integer(x), to determine how many times to run the following:
+//Loop until an array reaches the given length of x, generate a random string and add it to the array with each pass. The random string should be of varying length, with a min of 1 letter and a max of 10 letters.
+
+//ATTEMPT 1
+
+// function random_data(x) {
+//   var rand_word = "";
+//   var rand_array = [];
+//   for (var i = 0; i < x; i++); {
+//     for (var i = 0; i < Math.floor((Math.random() * 10  ) + 1); i++) {
+//       var letters = "abcdefghijklmnopqrstuvwyz";
+//       var rand_letter = letters.charAt(Math.floor   ((Math.random() * 25 + 1)));
+//       rand_word += rand_letter;
+//       console.log(rand_word);
+//     }
+//      rand_array.push(rand_word);
+//     console.log(rand_array);
+//   }
+//   console.log(rand_array);
+// }
+
+// random_data(10);
+
+
+//ATTEMPT 2
+
+function random_word() {
+  var rand_word = "";
+  for (var i = 0; i < Math.floor((Math.random() * 10  ) + 1); i++) {
+      var letters = "abcdefghijklmnopqrstuvwyz";
+      var rand_letter = letters.charAt(Math.floor   ((Math.random() * 25 + 1)));
+      rand_word += rand_letter;
+    }
+    return rand_word;
+}
+
+function random_data(x) {
+  var rand_array = [];
+  for (var i = 0; i < x; i++); {
+    rand_array.push(random_word);
+  }
+  console.log(rand_array);
+}
+
+//console.log(random_word())
+random_data(10);
+
+//Notes: can't seem to get this to work correctly. In both, I'm not able to get more than one added to the array. Not sure what I'm doing wrong. In the first pass, I'm guessing it's because I'm using a for loop within a for loop - not sure if that's allowed. In the second pass, the function is unable to see the original function I created. Have spent too much time on this, though, need help seeing where I'm going wrong!
