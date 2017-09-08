@@ -37,3 +37,11 @@ Moulin Rouge|2001|Ewan McGregor|true|Baz Luhrmann
 Wall-E|2008|Ben Burtt|true|Andrew Stanton
 Indiana Jones and the Kingom of the Crystal Skull|2008|Harrison Ford|false|Steven Spielberg
 Romeo + Juliet|1996|Leo|true|Baz Luhrmann
+
+Question 5:
+sqlite> DELETE FROM movies WHERE title = "Romeo + Juliet";
+sqlite> SELECT * FROM movies;
+1|Jurassic Park|1993|1|Sam Neill|true
+2|Moulin Rouge|2001|2|Ewan McGregor|true
+3|Wall-E|2008|3|Ben Burtt|true
+4|Indiana Jones and the Kingom of the Crystal Skull|2008|1|Harrison Ford|false
