@@ -7,6 +7,7 @@ sqlite> SELECT * FROM movies;
 4|Indiana Jones and the Kingom of the Crystal Skull|2008|1|Harrison Ford|false
 5|Romeo + Juliet|1996|2|Leonardo DiCaprio|true
 
+
 sqlite> SELECT * FROM directors;
 1|Steven Spielberg
 2|Baz Luhrmann
@@ -21,3 +22,18 @@ sqlite> SELECT * FROM movies;
 4|Indiana Jones and the Kingom of the Crystal Skull|2008|1|Harrison Ford|false
 5|Romeo + Juliet|1996|2|Leo|true
 
+Question 3:
+sqlite> SELECT * FROM movies, directors WHERE movies.director_id = directors.id;
+1|Jurassic Park|1993|1|Sam Neill|true|1|Steven Spielberg
+2|Moulin Rouge|2001|2|Ewan McGregor|true|2|Baz Luhrmann
+3|Wall-E|2008|3|Ben Burtt|true|3|Andrew Stanton
+4|Indiana Jones and the Kingom of the Crystal Skull|2008|1|Harrison Ford|false|1|Steven Spielberg
+5|Romeo + Juliet|1996|2|Leo|true|2|Baz Luhrmann
+
+Question 4:
+sqlite> SELECT movies.title, movies.year, movies.lead, movies.good, directors.name FROM movies JOIN directors ON movies.director_id = directors.id;
+Jurassic Park|1993|Sam Neill|true|Steven Spielberg
+Moulin Rouge|2001|Ewan McGregor|true|Baz Luhrmann
+Wall-E|2008|Ben Burtt|true|Andrew Stanton
+Indiana Jones and the Kingom of the Crystal Skull|2008|Harrison Ford|false|Steven Spielberg
+Romeo + Juliet|1996|Leo|true|Baz Luhrmann
