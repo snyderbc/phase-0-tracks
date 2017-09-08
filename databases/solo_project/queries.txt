@@ -1,0 +1,23 @@
+Question 1:
+
+sqlite> SELECT * FROM movies;
+1|Jurassic Park|1993|1|Sam Neill|true
+2|Moulin Rouge|2001|2|Ewan McGregor|true
+3|Wall-E|2008|3|Ben Burtt|true
+4|Indiana Jones and the Kingom of the Crystal Skull|2008|1|Harrison Ford|false
+5|Romeo + Juliet|1996|2|Leonardo DiCaprio|true
+
+sqlite> SELECT * FROM directors;
+1|Steven Spielberg
+2|Baz Luhrmann
+3|Andrew Stanton
+
+Question 2:
+sqlite> UPDATE movies SET lead = "Leo" WHERE title = "Romeo + Juliet";
+sqlite> SELECT * FROM movies;
+1|Jurassic Park|1993|1|Sam Neill|true
+2|Moulin Rouge|2001|2|Ewan McGregor|true
+3|Wall-E|2008|3|Ben Burtt|true
+4|Indiana Jones and the Kingom of the Crystal Skull|2008|1|Harrison Ford|false
+5|Romeo + Juliet|1996|2|Leo|true
+
