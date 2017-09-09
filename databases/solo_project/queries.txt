@@ -45,3 +45,63 @@ sqlite> SELECT * FROM movies;
 2|Moulin Rouge|2001|2|Ewan McGregor|true
 3|Wall-E|2008|3|Ben Burtt|true
 4|Indiana Jones and the Kingom of the Crystal Skull|2008|1|Harrison Ford|false
+
+
+Release 3
+sqlite> INSERT INTO movies (title, year, director_id, lead, good) VALUES ("Tommy Boy", 1995, 4, "Chris Farley", "true");
+sqlite> SELECT * FROM movies;
+1|Jurassic Park|1993|1|Sam Neill|true
+2|Moulin Rouge|2001|2|Ewan McGregor|true
+3|Wall-E|2008|3|Ben Burtt|true
+4|Indiana Jones and the Kingom of the Crystal Skull|2008|1|Harrison Ford|false
+5|Tommy Boy|1995|4|Chris Farley|true
+
+sqlite> INSERT INTO directors (name) VALUES ("Steven Soderbergh");
+sqlite> SELECT * FROM directors;
+1|Steven Spielberg
+2|Baz Luhrmann
+3|Andrew Stanton
+4|Steven Soderbergh
+
+sqlite> UPDATE movies SET director_id = 5 WHERE title = "Tommy Boy";
+sqlite> SELECT * FROM movies;
+1|Jurassic Park|1993|1|Sam Neill|true
+2|Moulin Rouge|2001|2|Ewan McGregor|true
+3|Wall-E|2008|3|Ben Burtt|true
+4|Indiana Jones and the Kingom of the Crystal Skull|2008|1|Harrison Ford|false
+5|Tommy Boy|1995|5|Chris Farley|true
+
+
+sqlite> SELECT movies.title, movies.year, movies.director_id FROM movies INNER JOIN directors ON movies.director_id = directors.id;
+Jurassic Park|1993|1
+Moulin Rouge|2001|2
+Wall-E|2008|3
+Indiana Jones and the Kingom of the Crystal Skull|2008|1
+
+sqlite> SELECT title, year, director_id FROM movies m INNER JOIN directors d ON m.director_id = d.id;
+Jurassic Park|1993|1
+Moulin Rouge|2001|2
+Wall-E|2008|3
+Indiana Jones and the Kingom of the Crystal Skull|2008|1
+
+sqlite> SELECT title, year, director_id FROM movies m LEFT JOIN directors d ON m.director_id = d.id;
+Jurassic Park|1993|1
+Moulin Rouge|2001|2
+Wall-E|2008|3
+Indiana Jones and the Kingom of the Crystal Skull|2008|1
+Tommy Boy|1995|5
+
+
+sqlite> SELECT movies.title, movies.year, movies.director_id FROM directors d RIGHT JOIN movies m ON d.id = m.director_id;
+Error: RIGHT and FULL OUTER JOINs are not currently supported
+
+sqlite> SELECT directors.id, movies.title, movies.year FROM directors LEFT JOIN movies ON movies.director_id = directors.id;
+1|Indiana Jones and the Kingom of the Crystal Skull|2008
+1|Jurassic Park|1993
+2|Moulin Rouge|2001
+3|Wall-E|2008
+4||
+
+sqlite> SELECT directors.id, movies.title, movies.year FROM directors LEFT JOIN movies ON movies.director_id = directors.id WHERE movies.title is NULL;
+4||
+
