@@ -45,3 +45,18 @@ artist_sugg = default_suggestion[0][2]
 
 
 puts "Sweet! Check out '#{song_sugg}' by #{artist_sugg}."
+
+#ask the user if they're happy with the suggestion. If they're not, allow them to provide a different song/artist combo.
+
+puts "How'd we do? Do you like our suggestion? (y/n)"
+like_sugg = gets.chomp
+
+if like_sugg =="y"
+  puts "Glad you like it. Have a #{current_mood} day!"
+else puts "Aw, shucks. We'll do better next time. What musician or band name would you prefer?"
+  pref_artist = gets.chomp
+  puts "Which of their songs is your favorite?"
+  pref_song = gets.chomp
+  puts "Got it! We'll remember that for next time you're feeling #{current_mood}."
+end
+
