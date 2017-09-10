@@ -64,4 +64,5 @@ end
 
 if pref_artist != nil
   db.execute("UPDATE songs SET title = '#{pref_song}' WHERE mood = '#{current_mood}'")
+  db.execute("UPDATE songs SET artist = '#{pref_artist}' WHERE mood = '#{current_mood}'")
 end
