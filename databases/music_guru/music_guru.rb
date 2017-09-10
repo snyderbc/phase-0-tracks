@@ -63,6 +63,5 @@ end
 # If the user provided a preferred artist is not equal to nil, update the songs table at the given mood to reflect user input (song, artist).
 
 if pref_artist != nil
-  db.execute("UPDATE songs SET title = '#{pref_song}' WHERE mood = '#{current_mood}'")
-  db.execute("UPDATE songs SET artist = '#{pref_artist}' WHERE mood = '#{current_mood}'")
+  db.execute("UPDATE songs SET title = '#{pref_song}', artist = '#{pref_artist}'  WHERE mood = '#{current_mood}'")
 end
