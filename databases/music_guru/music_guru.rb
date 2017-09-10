@@ -26,3 +26,22 @@ db.execute(create_table_cmd)
 
 #create default songs
 # db.execute("INSERT INTO songs (title, artist, mood) VALUES ('Sun is Shining', 'Axwell/Ingrosso', 'happy'), ('Everything to Nothing', 'Manchester Orchestra', 'angsty'), ('Dayvan Cowboy', 'Boards of Canada', 'chill'), ('Last Resort', 'Papa Roach', 'angry')")
+
+puts "Welcome to Music Guru. We'll provide a song suggestion, based on your current mood. Don't like the suggestion? It's cool. Just tell us what song you'd prefer in the future, and we'll remember for next time around."
+
+puts "Let's get to it. Which of the following best fits your current mood: happy, angsty, chill, or angry?"
+
+#get user's current mood
+current_mood = gets.chomp
+
+#return the table value that matches the user's current mood
+
+default_suggestion = db.execute ("SELECT * FROM songs WHERE mood = '#{current_mood}'")
+
+# p default_suggestion.class --> Array
+
+song_sugg = default_suggestion[0][1]
+artist_sugg = default_suggestion[0][2]
+
+
+puts "Sweet! Check out '#{song_sugg}' by #{artist_sugg}."
