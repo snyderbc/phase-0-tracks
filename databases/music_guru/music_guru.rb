@@ -60,3 +60,8 @@ else puts "Aw, shucks. We'll do better next time. What musician or band name wou
   puts "Got it! We'll remember that for next time you're feeling #{current_mood}."
 end
 
+# If the user provided a preferred artist is not equal to nil, update the songs table at the given mood to reflect user input (song, artist).
+
+if pref_artist != nil
+  db.execute("UPDATE songs SET title = '#{pref_song}' WHERE mood = '#{current_mood}'")
+end
