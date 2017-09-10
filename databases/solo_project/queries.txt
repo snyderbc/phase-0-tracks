@@ -1,0 +1,106 @@
+Question 1:
+
+sqlite> SELECT * FROM movies;
+1|Jurassic Park|1993|1|Sam Neill|true
+2|Moulin Rouge|2001|2|Ewan McGregor|true
+3|Wall-E|2008|3|Ben Burt|true
+4|Indiana Jones and the Kingdom of the Crystal Skull|2008|1|Harrison Ford|false
+5|Tommy Boy|1995|4|Chris Farley|true
+
+
+sqlite> SELECT * FROM directors;
+1|Steven Spielberg
+2|Baz Luhrmann
+3|Andrew Stanton
+4|Steven Soderbergh
+
+Question 2:
+sqlite> UPDATE movies SET title = "WALL-E" WHERE id = 3;
+sqlite> SELECT * FROM movies;
+1|Jurassic Park|1993|1|Sam Neill|true
+2|Moulin Rouge|2001|2|Ewan McGregor|true
+3|WALL-E|2008|3|Ben Burt|true
+4|Indiana Jones and the Kingdom of the Crystal Skull|2008|1|Harrison Ford|false
+5|Tommy Boy|1995|4|Chris Farley|true
+
+Question 3:
+sqlite> SELECT * FROM movies, directors WHERE movies.director_id = directors.id;
+1|Jurassic Park|1993|1|Sam Neill|true|1|Steven Spielberg
+2|Moulin Rouge|2001|2|Ewan McGregor|true|2|Baz Luhrmann
+3|WALL-E|2008|3|Ben Burt|true|3|Andrew Stanton
+4|Indiana Jones and the Kingdom of the Crystal Skull|2008|1|Harrison Ford|false|1|Steven Spielberg
+5|Tommy Boy|1995|4|Chris Farley|true|4|Steven Soderbergh
+
+sqlite> UPDATE directors SET name = "Peter Segal" WHERE id = 4;
+sqlite> SELECT * FROM directors;
+1|Steven Spielberg
+2|Baz Luhrmann
+3|Andrew Stanton
+4|Peter Segal
+
+sqlite> INSERT INTO directors (name) VALUES ("Steven Soderbergh");
+sqlite> SELECT * FROM directors;
+1|Steven Spielberg
+2|Baz Luhrmann
+3|Andrew Stanton
+4|Peter Segal
+5|Steven Soderbergh
+
+sqlite> SELECT movies.title, movies.year, directors.name FROM movies JOIN directors ON movies.director_id = directors.id;
+Jurassic Park|1993|Steven Spielberg
+Moulin Rouge|2001|Baz Luhrmann
+WALL-E|2008|Andrew Stanton
+Indiana Jones and the Kingdom of the Crystal Skull|2008|Steven Spielberg
+Tommy Boy|1995|Peter Segal
+
+Question 5:
+sqlite> DELETE FROM movies WHERE title = "WALL-E";
+sqlite> SELECT * FROM movies;
+1|Jurassic Park|1993|1|Sam Neill|true
+2|Moulin Rouge|2001|2|Ewan McGregor|true
+4|Indiana Jones and the Kingdom of the Crystal Skull|2008|1|Harrison Ford|false
+5|Tommy Boy|1995|4|Chris Farley|true
+
+
+Release 3
+sqlite> SELECT * FROM movies;
+1|Jurassic Park|1993|1|Sam Neill|true
+2|Moulin Rouge|2001|2|Ewan McGregor|true
+4|Indiana Jones and the Kingdom of the Crystal Skull|2008|1|Harrison Ford|false
+5|Tommy Boy|1995|4|Chris Farley|true
+
+sqlite> SELECT * FROM directors;
+1|Steven Spielberg
+2|Baz Luhrmann
+3|Andrew Stanton
+4|Peter Segal
+5|Steven Soderbergh
+
+sqlite> SELECT movies.title, movies.director_id, movies.year FROM movies INNER JOIN directors ON movies.director_id = directors.id;
+Jurassic Park|1|1993
+Moulin Rouge|2|2001
+Indiana Jones and the Kingdom of the Crystal Skull|1|2008
+Tommy Boy|4|1995
+
+sqlite> SELECT movies.title, movies.director_id, movies.year FROM movies LEFT JOIN directors on movies.director_id = directors.id;
+Jurassic Park|1|1993
+Moulin Rouge|2|2001
+Indiana Jones and the Kingdom of the Crystal Skull|1|2008
+Tommy Boy|4|1995
+
+sqlite> SELECT movies.title, movies.director, movies.year FROM movies RIGHT JOIN directors on movies.director_id = directors.id;
+Error: RIGHT and FULL OUTER JOINs are not currently supported
+
+
+sqlite> SELECT movies.title, movies.director_id, movies.year FROM movies LEFT JOIN directors on movies.director_id = directors.id WHERE movies.director_id =1;
+Jurassic Park|1|1993
+Indiana Jones and the Kingdom of the Crystal Skull|1|2008
+
+sqlite> SELECT directors.name, movies.title FROM directors LEFT JOIN movies ON directors.id = movies.director_id;
+Steven Spielberg|Indiana Jones and the Kingdom of the Crystal Skull
+Steven Spielberg|Jurassic Park
+Baz Luhrmann|Moulin Rouge
+Andrew Stanton|
+Peter Segal|Tommy Boy
+Steven Soderbergh|
+
