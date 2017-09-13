@@ -10,3 +10,4 @@ A virtual private server basically creates a virtual computer, or entity that al
 
 Optional bonus question: Why is it considered a bad idea to run programs as the root user on a Linux system?
 It's bad for security. You generally want to give only certain people administrative access - or you can do damage to your underlying system.
+
