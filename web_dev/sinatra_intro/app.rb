@@ -73,6 +73,8 @@ end
 get '/student/:first_name' do
   first_name = params[:first_name]
   cap_first_name = first_name.capitalize
-  student_name = db.execute("SELECT * FROM students WHERE name LIKE '#{cap_first_name}'")
+  student_name = db.execute("SELECT * FROM students WHERE name LIKE '%Dandre%'")
   # student_name
 end
+
+ # WHERE name LIKE '%#{cap_first_name}%'
