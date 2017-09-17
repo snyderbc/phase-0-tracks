@@ -23,8 +23,27 @@ get '/:person_1/loves/:person_2' do
   "#{params[:person_1]} loves #{params[:person_2]}"
 end
 
-# get '/contact' do
-#   "The address is #{params[:adress]}"
+#Use plus sign for spaces in the address
+get '/contact' do
+  "The address is #{params[:address]}"
+end
+
+get '/great_job' do
+  name = params[:name]
+  if name
+    "Good job #{name}!"
+  else
+    "Good job!"
+  end
+end
+
+get '/add/:number1/plus/:number2' do
+  result = params[:number1].to_i + params[:number2].to_i
+  str_result = result.to_s
+  p str_result
+  "The result is #{str_result}."
+end
+
 
 # write a GET route that retrieves
 # all student data
