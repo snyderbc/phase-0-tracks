@@ -30,6 +30,7 @@ end
 
 get '/great_job' do
   name = params[:name]
+  p name
   if name
     "Good job #{name}!"
   else
@@ -40,7 +41,7 @@ end
 get '/add/:number1/plus/:number2' do
   result = params[:number1].to_i + params[:number2].to_i
   str_result = result.to_s
-  p str_result
+  # p str_result
   "The result is #{str_result}."
 end
 
@@ -65,4 +66,13 @@ end
 get '/students/:id' do
   student = db.execute("SELECT * FROM students WHERE id=?", [params[:id]])[0]
   student.to_s
+end
+
+
+#example name: "name"=>"Dandre Wiegand"
+get '/student/:first_name' do
+  first_name = params[:first_name]
+  cap_first_name = first_name.capitalize
+  student_name = db.execute("SELECT * FROM students WHERE name LIKE '#{cap_first_name}'")
+  # student_name
 end
